@@ -1,0 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
+
+<div
+    class="offcanvas offcanvas-end"
+    data-bs-scroll="true"
+    data-bs-keyboard="true"
+    data-bs-backdrop="false"
+    tabindex="-1"
+    id="docMenuBar"
+    aria-labelledby="offcanvasScrollingLabel"
+    style="width: 350px"
+>
+    <div class="offcanvas-body">
+        <span>테스트</span>
+    </div>
+</div>

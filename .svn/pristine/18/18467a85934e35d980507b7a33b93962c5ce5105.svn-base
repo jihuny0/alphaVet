@@ -1,0 +1,24 @@
+package kr.co.vo;
+
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
+public class ClinicVO {
+	
+	private String cliCd;
+	private String cliName;
+	private String cliAddr1;
+	private String cliAddr2;
+	//@DateTimeFormat(iso = ISO.DATE)
+	private String cliStartDate;
+	private String cliState;
+	private String cliTel;
+	
+}

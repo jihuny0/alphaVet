@@ -1,0 +1,72 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://www.springframework.org/security/tags"
+	prefix="sec"%>
+<sec:authentication property="principal" var="principal" />
+
+
+<style>
+
+#board {
+	width: 50%; 
+	height: 50%; 
+}
+
+#empStyle{
+	margin-top: 10%;
+	text-align: center; 
+	opacity: 0.9;
+	font-size: 305%;
+	color: white;
+}
+
+#back {
+	background: url("${pageContext.request.contextPath}/resources/images/home/greenCat.jpg");
+	background-size: cover;
+	height: 1200px;
+	opacity: 0.62;
+}
+
+#good {
+ 	margin-top: 5%;  
+	color: white;
+	opacity: 0.99;
+	font-size: 120%;
+	font-weight: 400;
+}
+
+
+
+</style>
+
+
+
+<div class="page-content" id="back">
+	<!-- start page title -->
+	<!-- end page title -->
+
+	<div class="col-xl-12" style="height: 100%;">
+	
+<%-- 		<%@include file="main/todoList.jsp"%> --%>
+		<%@include file="main/weather.jsp"%>
+				<%@include file="main/goodSentances.jsp"%>
+
+		<div align="center">
+			<div id="board">
+				<h1 id="empStyle" ><b>${principal.empVO.empName }님,
+					환영합니다.</b></h1>
+					<hr style="border: 3px; color: white;">
+				<%@include file="main/clock.jsp"%>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<script>
+$(function(){
+	document.getElementById("headerSearchBar").style.display="none";
+})
+</script>

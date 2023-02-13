@@ -1,0 +1,29 @@
+package kr.co.alphaVet.medic.service;
+
+import java.util.List;
+
+import kr.co.vo.AnimalVO;
+import kr.co.vo.ClinicVO;
+import kr.co.vo.DisDetailVO;
+import kr.co.vo.EmpVO;
+import kr.co.vo.MemberVO;
+import kr.co.vo.PatientVO;
+import kr.co.vo.PraVO;
+
+public interface MedicDocFileService {
+
+	public PraVO praInfo(String recNm) throws Exception;
+
+	public PatientVO patientInfo(String patId) throws Exception;
+
+	public MemberVO memberInfo(String memId) throws Exception;
+
+	public AnimalVO animalInfo(String animalCd) throws Exception;
+
+	public List<DisDetailVO> disDetailInfo(String praCd) throws Exception;
+
+	public ClinicVO clinicInfo(String cliCd) throws Exception;
+
+	public EmpVO empInfo(String empId) throws Exception;
+
+}

@@ -1,0 +1,97 @@
+package kr.co.alphaVet.medic.service;
+
+import java.util.List;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Service;
+
+import kr.co.mapper.AnimalMapper;
+import kr.co.mapper.ClinicMapper;
+import kr.co.mapper.DisDetailMapper;
+import kr.co.mapper.EmployeesMapper;
+import kr.co.mapper.MemberMapper;
+import kr.co.mapper.PatientMapper;
+import kr.co.mapper.PraMapper;
+import kr.co.vo.AnimalVO;
+import kr.co.vo.ClinicVO;
+import kr.co.vo.DisDetailVO;
+import kr.co.vo.EmpVO;
+import kr.co.vo.MemberVO;
+import kr.co.vo.PatientVO;
+import kr.co.vo.PraVO;
+
+@Service
+public class MedicDocFileServiceImpl implements MedicDocFileService {
+
+	@Inject
+	private PraMapper praMapper;
+
+	@Inject
+	private PatientMapper patientMapper;
+
+	@Inject
+	private MemberMapper memberMapper;
+
+	@Inject
+	private AnimalMapper animalMapper;
+
+	@Inject
+	private DisDetailMapper disDetailMapper;
+
+	@Inject
+	private ClinicMapper clinicMapper;
+
+	@Inject
+	private EmployeesMapper empMapper;
+
+	@Override
+	public PraVO praInfo(String recNm) throws Exception {
+		PraVO vo = praMapper.selectPraByRec(recNm);
+
+		return vo;
+	}
+
+	@Override
+	public PatientVO patientInfo(String patId) throws Exception {
+		PatientVO vo = patientMapper.selectPatient(patId);
+
+		return vo;
+	}
+
+	@Override
+	public MemberVO memberInfo(String memId) throws Exception {
+		MemberVO vo = memberMapper.selectMember(memId);
+
+		return vo;
+	}
+
+	@Override
+	public AnimalVO animalInfo(String animalCd) throws Exception {
+		AnimalVO vo = animalMapper.selectAnimal(animalCd);
+
+		return vo;
+	}
+
+	@Override
+	public List<DisDetailVO> disDetailInfo(String praCd) throws Exception {
+		List<DisDetailVO> list = disDetailMapper.selectDisDetailList(praCd);
+
+		return list;
+	}
+
+	@Override
+	public ClinicVO clinicInfo(String cliCd) throws Exception {
+		ClinicVO vo = clinicMapper.selectClinic(cliCd);
+
+		return vo;
+	}
+
+	@Override
+	public EmpVO empInfo(String empId) throws Exception {
+		EmpVO vo = empMapper.selectDoctor(empId);
+
+		return vo;
+	}
+
+}

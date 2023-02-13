@@ -1,0 +1,17 @@
+/* jshint esversion: 6 */
+
+/**
+ * 202207_JJH
+ */
+
+const medicDocBtn = document.querySelector("#medicDocBtn");
+
+const openDoc = () => {
+    window.open(
+        "/document/doc/diagnosis?path=document4&recNm=" + 25,
+        "resPopup",
+        "width=814, height=1000, scrollbars=yes, resizable=yes"
+    );
+};
+
+// medicDocBtn.addEventListener("mouseup", openDoc);
